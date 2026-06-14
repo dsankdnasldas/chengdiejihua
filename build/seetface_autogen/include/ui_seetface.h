@@ -88,7 +88,8 @@ public:
         label->setObjectName("label");
         label->setMinimumSize(QSize(31, 21));
         label->setMaximumSize(QSize(31, 21));
-        label->setStyleSheet(QString::fromUtf8("border-image: url(:/yes.png);"));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/images/yes.png")));
+        label->setScaledContents(true);
 
         horizontalLayout->addWidget(label);
 
@@ -111,7 +112,8 @@ public:
         label_4 = new QLabel(videoWidget);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(90, 50, 266, 266));
-        label_4->setStyleSheet(QString::fromUtf8("border-image: url(:/crc.png);"));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/images/crc.png")));
+        label_4->setScaledContents(true);
         widget_3 = new QWidget(centralwidget);
         widget_3->setObjectName("widget_3");
         widget_3->setGeometry(QRect(480, 0, 320, 480));
