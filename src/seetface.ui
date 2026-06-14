@@ -69,14 +69,11 @@ background-color: rgba(49, 50, 54,69);</string>
             <height>21</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/images/assets/yes.png);</string>
+          </property>
           <property name="text">
            <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="../resources.qrc">:/images/yes.png</pixmap>
-          </property>
-          <property name="scaledContents">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -119,14 +116,11 @@ color: rgb(255, 255, 255);</string>
        <height>266</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/assets/crc.png);</string>
+     </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources.qrc">:/images/crc.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
      </property>
     </widget>
    </widget>
