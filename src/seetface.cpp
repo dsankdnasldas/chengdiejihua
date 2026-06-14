@@ -1,5 +1,8 @@
 #include "seetface.h"
-
+#include "ui_seetface.h"
+#include <QImage>
+#include <QPainter>
+#include <QDebug>
 seetface::seetface(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui_seetface)
@@ -9,5 +12,5 @@ seetface::seetface(QWidget* parent)
 
 seetface::~seetface()
 {
-    delete ui; 
+    delete ui;
 }

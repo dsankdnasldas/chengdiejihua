@@ -15,6 +15,5 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     seetface w;
     w.show();
-    cv::namedWindow("frame");
     return a.exec();
 }
