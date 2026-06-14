@@ -1,0 +1,5 @@
+D:/Codding/chengdie/seetfaceapp/build/CMakeFiles/seetface.dir
+D:/Codding/chengdie/seetfaceapp/build/CMakeFiles/edit_cache.dir
+D:/Codding/chengdie/seetfaceapp/build/CMakeFiles/rebuild_cache.dir
+D:/Codding/chengdie/seetfaceapp/build/CMakeFiles/seetface_autogen_timestamp_deps.dir
+D:/Codding/chengdie/seetfaceapp/build/CMakeFiles/seetface_autogen.dir

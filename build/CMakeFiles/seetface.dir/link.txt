@@ -1,0 +1,3 @@
+D:\Codding\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\seetface.dir/objects.a
+D:\Codding\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\seetface.dir/objects.a @CMakeFiles\seetface.dir\objects1.rsp
+D:\Codding\Qt\Tools\mingw1310_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\seetface.dir/objects.a -Wl,--no-whole-archive -o seetface.exe -Wl,--out-implib,libseetface.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\seetface.dir\linkLibs.rsp

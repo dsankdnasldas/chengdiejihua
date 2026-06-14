@@ -1,0 +1,20 @@
+[
+{
+  "directory": "D:/Codding/chengdie/seetfaceapp/build",
+  "command": "D:\\Codding\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/seetface.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\seetface.dir\\seetface_autogen\\mocs_compilation.cpp.obj -c D:\\Codding\\chengdie\\seetfaceapp\\build\\seetface_autogen\\mocs_compilation.cpp",
+  "file": "D:/Codding/chengdie/seetfaceapp/build/seetface_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/seetface.dir/seetface_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "D:/Codding/chengdie/seetfaceapp/build",
+  "command": "D:\\Codding\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/seetface.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\seetface.dir\\src\\main.cpp.obj -c D:\\Codding\\chengdie\\seetfaceapp\\src\\main.cpp",
+  "file": "D:/Codding/chengdie/seetfaceapp/src/main.cpp",
+  "output": "CMakeFiles/seetface.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/Codding/chengdie/seetfaceapp/build",
+  "command": "D:\\Codding\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/seetface.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\seetface.dir\\src\\seetface.cpp.obj -c D:\\Codding\\chengdie\\seetfaceapp\\src\\seetface.cpp",
+  "file": "D:/Codding/chengdie/seetfaceapp/src/seetface.cpp",
+  "output": "CMakeFiles/seetface.dir/src/seetface.cpp.obj"
+}
+]

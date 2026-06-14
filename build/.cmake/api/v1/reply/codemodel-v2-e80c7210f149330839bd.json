@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "seetface",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "seetface::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-seetface-Debug-0edb1f2c3f4ceb430720.json",
+					"name" : "seetface",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "seetface_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-seetface_autogen-Debug-0d0fb363fefdd67d6b0e.json",
+					"name" : "seetface_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "seetface_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-seetface_autogen_timestamp_deps-Debug-3816ec83d35e202d4bbc.json",
+					"name" : "seetface_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Codding/chengdie/seetfaceapp/build",
+		"source" : "D:/Codding/chengdie/seetfaceapp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
