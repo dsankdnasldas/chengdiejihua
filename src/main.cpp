@@ -1,11 +1,5 @@
 #include "seetface.h"
-
 #include <QApplication>
-#include <opencv2/opencv.hpp>
-#include <seeta/FaceDetector.h>
-
-
-
 #pragma comment(lib, "user32.lib")
 
 using namespace cv;

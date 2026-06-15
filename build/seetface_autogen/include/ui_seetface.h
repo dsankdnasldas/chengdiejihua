@@ -33,7 +33,8 @@ public:
     QLabel *label;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_2;
-    QLabel *label_4;
+    QLabel *headpicLb;
+    QLabel *videoLb;
     QWidget *widget_3;
     QLabel *titleLb;
     QLabel *headLb;
@@ -70,7 +71,7 @@ public:
         videoWidget = new QWidget(centralwidget);
         videoWidget->setObjectName("videoWidget");
         videoWidget->setGeometry(QRect(0, 0, 480, 480));
-        videoWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(62, 71, 78);"));
+        videoWidget->setStyleSheet(QString::fromUtf8(""));
         widget_2 = new QWidget(videoWidget);
         widget_2->setObjectName("widget_2");
         widget_2->setGeometry(QRect(90, 380, 271, 61));
@@ -108,10 +109,16 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_2);
 
-        label_4 = new QLabel(videoWidget);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(90, 50, 266, 266));
-        label_4->setStyleSheet(QString::fromUtf8("border-image: url(:/images/assets/crc.png);"));
+        headpicLb = new QLabel(videoWidget);
+        headpicLb->setObjectName("headpicLb");
+        headpicLb->setGeometry(QRect(90, 50, 266, 266));
+        headpicLb->setStyleSheet(QString::fromUtf8("border-image: url(:/images/assets/crc.png);"));
+        videoLb = new QLabel(videoWidget);
+        videoLb->setObjectName("videoLb");
+        videoLb->setGeometry(QRect(0, 0, 480, 480));
+        videoLb->raise();
+        widget_2->raise();
+        headpicLb->raise();
         widget_3 = new QWidget(centralwidget);
         widget_3->setObjectName("widget_3");
         widget_3->setGeometry(QRect(480, 0, 320, 480));
@@ -335,7 +342,8 @@ public:
         seetface->setWindowTitle(QCoreApplication::translate("seetface", "seetface", nullptr));
         label->setText(QString());
         label_2->setText(QCoreApplication::translate("seetface", "\350\256\244\350\257\201\346\210\220\345\212\237", nullptr));
-        label_4->setText(QString());
+        headpicLb->setText(QString());
+        videoLb->setText(QString());
         titleLb->setText(QCoreApplication::translate("seetface", "\344\272\272\350\204\270\350\257\206\345\210\253\350\200\203\345\213\244\347\263\273\347\273\237", nullptr));
         headLb->setText(QString());
         label_6->setText(QCoreApplication::translate("seetface", "\345\267\245\345\217\267", nullptr));

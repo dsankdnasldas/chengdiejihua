@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(62, 71, 78);</string>
+     <string notr="true"/>
     </property>
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
@@ -107,7 +107,7 @@ color: rgb(255, 255, 255);</string>
       </item>
      </layout>
     </widget>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="headpicLb">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -123,6 +123,22 @@ color: rgb(255, 255, 255);</string>
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="videoLb">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>480</width>
+       <height>480</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>videoLb</zorder>
+    <zorder>widget_2</zorder>
+    <zorder>headpicLb</zorder>
    </widget>
    <widget class="QWidget" name="widget_3" native="true">
     <property name="geometry">
