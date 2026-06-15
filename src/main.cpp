@@ -6,6 +6,7 @@ using namespace cv;
 
 int main(int argc, char *argv[])
 {
+    cv::setUseOptimized(false);
     QApplication a(argc, argv);
     seetface w;
     w.show();
