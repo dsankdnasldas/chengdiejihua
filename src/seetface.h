@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <opencv2/opencv.hpp>
 #include <seeta/FaceDetector.h>
+#include <QTcpSocket>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class seetface; }
@@ -17,8 +19,16 @@ public:
     ~seetface();
     void timerEvent(QTimerEvent *e) override;
 
+private slots:
+    void timer_connect();
+    void stop_connect();
+    void start_connect();
+
 private:
     Ui_seetface* ui;
     cv::VideoCapture cap;
     cv::CascadeClassifier cascade;
+
+    QTcpSocket msocket;
+    QTimer mtimer;
 };

@@ -14,7 +14,7 @@ seetface::seetface(QWidget* parent)
     ui->label->setScaledContents(true);
     ui->headpicLb->setPixmap(QPixmap(":/images/assets/crc.png"));
     ui->headpicLb->setScaledContents(true);
-
+    startTimer(100);
     if (!cap.open(0, cv::CAP_DSHOW)) {
         qDebug() << "Failed to open camera.";
         return;
@@ -24,7 +24,10 @@ seetface::seetface(QWidget* parent)
         qDebug() << "Failed to load haarcascade_frontalface_alt2.xml.";
     }
 
-    startTimer(100);
+    connect(&msocket,&QTcpSocket::disconnected,this, &seetface::start_connect);
+    connect(&msocket,&QTcpSocket::connected,this, &seetface::stop_connect);
+    connect(&mtimer, &QTimer::timeout,this,&seetface::timer_connect);
+    mtimer.start(5000);
 }
 
 seetface::~seetface()
@@ -67,4 +70,23 @@ void seetface::timerEvent(QTimerEvent *e)
     QImage image(srcImage.data, srcImage.cols, srcImage.rows, srcImage.step, QImage::Format_RGB888);
     QPixmap mmp = QPixmap::fromImage(image.copy());
     ui->videoLb->setPixmap(mmp);
+}
+
+void seetface::timer_connect()
+{
+    //连接服务器
+    msocket.connectToHost("192.168.0.102",9999);
+    qDebug()<<"Connecting to server";
+}
+
+void seetface::stop_connect()
+{
+    mtimer.stop();
+    qDebug()<<"Successfully connected to server";
+}
+
+void seetface::start_connect()
+{
+    mtimer.start(5000);//启动定时器
+    qDebug()<<"Disconnected from server";
 }
