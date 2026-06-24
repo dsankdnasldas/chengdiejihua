@@ -6,6 +6,9 @@
 #include <seeta/FaceDetector.h>
 #include <QTcpSocket>
 #include <QTimer>
+#include <QJsonDocument>
+#include <QJsonParseError>
+#include <QJsonObject>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class seetface; }
@@ -18,6 +21,7 @@ public:
     seetface(QWidget* parent = nullptr);
     ~seetface();
     void timerEvent(QTimerEvent *e) override;
+    void recv_data();
 
 private slots:
     void timer_connect();
@@ -31,4 +35,10 @@ private:
 
     QTcpSocket msocket;
     QTimer mtimer;
+
+    //标志是否是同一个人脸进入到识别区域
+    int flag;
+
+    //保存人类的数据
+    cv::Mat faceMat;
 };
