@@ -90,6 +90,7 @@ void seetface::timerEvent(QTimerEvent *e)
     {
         //把人脸框移动到中心位置
         ui->headpicLb->move(100,60);
+        ui->widget_2->hide();
         flag=0;
     }
 
