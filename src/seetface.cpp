@@ -32,9 +32,10 @@ seetface::seetface(QWidget* parent)
     connect(&mtimer, &QTimer::timeout,this,&seetface::timer_connect);
     mtimer.start(5000);
 
-    flag =0;
-
-    ui->widget_2->hide();
+    m_flag =0;
+    m_authstatus = PROGRESS;
+    authent_disp(m_authstatus);
+    //ui->widget_2->show();
 }
 
 seetface::~seetface()
@@ -63,10 +64,10 @@ void seetface::timerEvent(QTimerEvent *e)
     cv::cvtColor(srcImage, grayImage, cv::COLOR_BGR2GRAY);
     std::vector<cv::Rect> faceRects;
     cascade.detectMultiScale(grayImage,faceRects);
-    if (faceRects.size()>0 && flag>=0) {
+    if (faceRects.size()>0 && m_flag>=0) {
         cv::Rect rect = faceRects.at(0);
         ui->headpicLb->move(rect.x,rect.y);
-        if(flag > 2){
+        if(m_flag > 2){
             std::vector<uchar> buf;
             cv::imencode(".jpg",srcImage,buf);
             QByteArray byte((const char*)buf.data(),buf.size());
@@ -78,20 +79,22 @@ void seetface::timerEvent(QTimerEvent *e)
             stream<<backsize<<byte;
             //发送
             msocket.write(sendData);
-            flag = -2;
+            m_flag = -2;
 
             faceMat = srcImage(rect);
             //保存
             imwrite("./face.jpg",faceMat);
         }
-        flag++;
+        m_flag++;
     }
     if(faceRects.size() == 0)
     {
         //把人脸框移动到中心位置
         ui->headpicLb->move(100,60);
-        ui->widget_2->hide();
-        flag=0;
+        m_authstatus=PROGRESS;
+        authent_disp(m_authstatus);
+        //ui->widget_2->hide();
+        m_flag=0;
     }
 
     if(srcImage.data == nullptr) 
@@ -155,7 +158,46 @@ void seetface::recv_data()
     QString name = obj.value("name").toString();
     QString department = obj.value("department").toString();
     QString timestr = obj.value("time").toString();
+    //查看解析的JSON数据中的关键字是否为空
+    //如果是空，m_authstatus = FAIL
+    //如果不为空，m_authstatus = SCUESS
+    //ui->widget_2->show();
+    if(employeeID != ""){
+        m_authstatus = SUCCESS;
+    }else{
+        m_authstatus = FAIL;
+        if(m_is_dis_face){
+            //弹窗是否进行蓝牙辅助认证
+            m_is_dis_face = false;
+            QMessageBox msgBox(this);
+            msgBox.setWindowTitle(tr("提示"));
+            msgBox.setText(tr("是否开启蓝牙辅助认证？"));
+            QPushButton *okBtn =
+                msgBox.addButton(tr("确认"), QMessageBox::AcceptRole);
 
+            QPushButton *cancelBtn =
+                msgBox.addButton(tr("取消"), QMessageBox::RejectRole);
+
+            msgBox.exec();
+            
+            if(msgBox.clickedButton() == okBtn)
+            {
+                // 跳转到蓝牙辅助认证界面
+                BluetoothAssistWidget *bluetoothPage = new BluetoothAssistWidget();
+                bluetoothPage->setAttribute(Qt::WA_DeleteOnClose);
+                bluetoothPage->show();
+                bluetoothPage->raise();
+                bluetoothPage->activateWindow();
+                // 如果当前页面需要关闭
+                this->hide();
+            }
+            else
+            {
+                // 什么都不做，关闭弹窗
+            }
+        }
+    }
+    authent_disp(m_authstatus);
     ui->lineEdit->setText(employeeID);
     ui->lineEdit_2->setText(name);
     ui->lineEdit_3->setText(department);
@@ -163,5 +205,32 @@ void seetface::recv_data()
 
     //通过样式来显示图片
     ui->headLb->setStyleSheet("border-radius:75px;border-image: url(./face.jpg);");
+}
+
+
+void seetface::authent_disp(int status)
+{
+    ui->label->clear();
+    QString iconPath;
+    QString statusText;
+    if (status == PROGRESS) {
+        iconPath = ":/images/assets/loading.gif";
+        statusText = "认证中";
+    } else if (status == SUCCESS) {
+        iconPath = ":/images/assets/yes.png";
+        statusText = "认证成功";
+    } else if (status == FAIL) {
+        iconPath = ":/images/assets/eorro.png";
+        statusText = "认证失败";
+    } else {
+        iconPath = ":/images/assets/loading.gif";
+        statusText = "认证中";
+    }
+    QPixmap icon(iconPath);
+    ui->label->setPixmap(icon);
+    ui->label->setScaledContents(true);
+    ui->label->setFixedSize(icon.size());
+    ui->label_2->setText(statusText);
     ui->widget_2->show();
+    return;
 }

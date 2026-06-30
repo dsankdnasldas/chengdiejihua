@@ -37,7 +37,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">border-radius:10px;
-background-color: rgba(49, 50, 54,69);</string>
+background-color: rgba(0, 0, 0,0);</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
@@ -70,7 +70,7 @@ background-color: rgba(49, 50, 54,69);</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">border-image: url(:/images/assets/yes.png);</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string/>

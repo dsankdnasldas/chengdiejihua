@@ -2,5 +2,9 @@
     <qresource prefix="/images">
         <file>assets/yes.png</file>
         <file>assets/crc.png</file>
+        <file>assets/eorro.png</file>
+        <file>assets/loading.png</file>
+        <file>assets/loading.gif</file>
     </qresource>
+    <qresource prefix="/new/prefix"/>
 </RCC>
